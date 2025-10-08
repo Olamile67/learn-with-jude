@@ -53,5 +53,47 @@ def bmi_calculator():
     else:
         Category = "Obese"
         Advice = "LOWER YOUR COLESTEROL AND HIT THE GYM IF YOU WANT TO LIVE LONG"
-    print(f"Result is {Category}, {Advice}")
+    print(f"Result is {Category}\n {Advice}")
 bmi_calculator()
+
+
+# EXERCISE 3: Simple ATM Machine
+print("\n" + "="*50)
+print("EXERCISE 3: SIMPLE ATM MACHINE")
+print("="*50)
+
+print("Create a simple ATM that:")
+print("1. Has a starting balance")
+print("2. Allows deposit, withdrawal, or balance check")
+print("3. Validates transactions")
+print("4. Shows appropriate messages")
+
+def ATM_Machine():
+    balance = 1000.00 #starting balance
+    print(f"Welcome To Simple ATM \n Current balance: ${balance:.2f}")
+
+    operation = input("Choose operstion to perform:\n1.Deposit \n2.Withdraw \n3.Balance \n ").lower
+
+    if operation == "balance" or 1:
+        print(f"Your current balance is ${balance:.2f}")
+    elif operation == "Deposit" or 2:
+        amount = float(input("Input the ammount to deposit: $ "))
+        if amount > 0:
+            balance += amount
+            print(f"Deposited ${amount:.2f} \n Balance ${balance:.2f}")
+        else:
+            print("Invalid Amount! Must be positive")
+    elif operation == "Withdrawal" or 3:
+        amount = float(input("Amount to withdraw: $"))
+        if amount > 0:
+            if amount <= balance:
+                balance -= amount
+                print(f"Withdrwan :${amount:.2f} \n Remaining balance: ${balance:.2f}")
+            else:
+                print("Insufficient funds")
+        else:
+            print("Invalid Ammount! \n Must be positive.")
+    else:
+        print("Invalid operation!")
+ATM_Machine()
+
