@@ -97,65 +97,138 @@
 #         print("Invalid operation!")
 # ATM_Machine()
 
-# EXERCISE 4: Quiz Grader
+# # EXERCISE 4: Quiz Grader
+# print("\n" + "="*50)
+# print("EXERCISE 4: QUIZ GRADER")
+# print("="*50)
+
+# print("Create a quiz grader that:")
+# print("1. Asks 5 multiple choice questions")
+# print("2. Checks answers against correct answers")
+# print("3. Calculates score and percentage")
+# print("4. Gives final grade and feedback")
+
+# def quiz_grader_solution():
+#     questions = [
+#         "What is the capital of France? (a) London (b) Paris (c) Berlin: ",
+#         "What is 2 + 2? (a) 3 (b) 4 (c) 5: ",
+#         "Which planet is closest to the sun? (a) Venus (b) Mercury (c) Mars: ",
+#         "What is the largest ocean? (a) Atlantic (b) Indian (c) Pacific: ",
+#         "Who wrote 'Romeo and Juliet'? (a) Shakespeare (b) Dickens (c) Austen: "
+#     ]
+    
+#     correct_answers = ['b', 'b', 'b', 'c', 'a']
+#     user_answers = []
+# #Ask question 
+#     for i, question in enumerate(questions, 1):
+#         print(f"Question{i}:{questions} ")
+#         answer = input("Your Answer: ").lower()
+#         user_answers.append(answer)
+#         print()
+#     #Grading the quiz 
+#     correct_count = 0
+#     print("Quiz Result:")
+#     print("-"*20)
+
+#     for i, (user_ans, correct_ans) in enumerate(zip(user_answers, correct_answers), 1):
+#         if user_ans == correct_ans:
+#             print(f"Question{i}: ✅Correct")
+#             correct_count += 1
+#         else:
+#             print(f"Question {i}: ❌ wrong, (correct Answer is {correct_ans})")
+#     #Calculate the final result
+#     percentage = correct_count / len(questions) * 100
+
+#     print(f"Final score: {correct_count}/{len(questions)} ({percentage:.0f}%)")
+
+#     if percentage >= 90:
+#         grade = "A"
+#         feedback = "Excellent Work!"
+#     elif percentage >= 80:
+#         grade = "B"
+#         feedback = "Good Job!"
+#     elif percentage >=70:
+#         grade = "C"
+#         feedback = "Satisfactory"
+#     elif percentage >= 60:
+#         grade = "D"
+#         feedback = "Needs improvement"
+#     else:
+#         grade = "F"
+#         feedback = "Study more and try again"
+#     print(f"Grade {grade} ")
+#     print(f"feedback: {feedback}")
+# quiz_grader_solution()
+
+# EXERCISE 5: Rock Paper Scissors Game
 print("\n" + "="*50)
-print("EXERCISE 4: QUIZ GRADER")
+print("EXERCISE 5: ROCK PAPER SCISSORS")
 print("="*50)
 
-print("Create a quiz grader that:")
-print("1. Asks 5 multiple choice questions")
-print("2. Checks answers against correct answers")
-print("3. Calculates score and percentage")
-print("4. Gives final grade and feedback")
+print("Create a Rock Paper Scissors game that:")
+print("1. Gets player choice")
+print("2. Generates computer choice randomly")
+print("3. Determines winner using game rules")
+print("4. Shows results clearly")
 
-def quiz_grader_solution():
-    questions = [
-        "What is the capital of France? (a) London (b) Paris (c) Berlin: ",
-        "What is 2 + 2? (a) 3 (b) 4 (c) 5: ",
-        "Which planet is closest to the sun? (a) Venus (b) Mercury (c) Mars: ",
-        "What is the largest ocean? (a) Atlantic (b) Indian (c) Pacific: ",
-        "Who wrote 'Romeo and Juliet'? (a) Shakespeare (b) Dickens (c) Austen: "
-    ]
+def Rock_Paper_Scissors():
+    import random
+
+    choices = ["rock", "paper", "scissors"]
+
+    print("Let's play Rock Paper Scissors!")
+    player_choice = input("Choose rock, paper or scissors: ").lower()
+
+    if player_choice not in choices:
+        print("Invalid choice!!")
+        return
     
-    correct_answers = ['b', 'b', 'b', 'c', 'a']
-    user_answers = []
-#Ask question 
-    for i, question in enumerate(questions, 1):
-        print(f"Question{i}:{questions} ")
-        answer = input("Your Answer: ").lower()
-        user_answers.append(answer)
-        print()
-    #Grading the quiz 
-    correct_count = 0
-    print("Quiz Result:")
-    print("-"*20)
+    computer_choice = random.choice(choices)
 
-    for i, (user_ans, correct_ans) in enumerate(zip(user_answers, correct_answers), 1):
-        if user_ans == correct_ans:
-            print(f"Question{i}: ✅Correct")
-            correct_count += 1
-        else:
-            print(f"Question {i}: ❌ wrong, (correct Answer is {correct_ans})")
-    #Calculate the final result
-    percentage = correct_count / len(questions) * 100
+    print(f"You choose: {player_choice}")
+    print(f"Computer chose: {computer_choice}")
 
-    print(f"Final score: {correct_count}/{len(questions)} ({percentage:.0f}%)")
-
-    if percentage >= 90:
-        grade = "A"
-        feedback = "Excellent Work!"
-    elif percentage >= 80:
-        grade = "B"
-        feedback = "Good Job!"
-    elif percentage >=70:
-        grade = "C"
-        feedback = "Satisfactory"
-    elif percentage >= 60:
-        grade = "D"
-        feedback = "Needs improvement"
+#Determine winner
+    if player_choice == computer_choice:
+        result = "it's a tie"
+    elif (player_choice == "rock" and computer_choice == "scissors") or \
+         (player_choice == "paper" and computer_choice == "rock") or \
+         (player_choice == "scissors" and computer_choice == "paper"):
+        result = "You win!"
     else:
-        grade = "F"
-        feedback = "Study more and try again"
-    print(f"Grade {grade} ")
-    print(f"feedback: {feedback}")
-quiz_grader_solution()
+        result = "Computer win!"
+    print(f"Result: {result}")
+Rock_Paper_Scissors()
+
+# EXERCISE 6: Age Group Classifier
+print("\n" + "="*50)
+print("EXERCISE 6: AGE GROUP CLASSIFIER")
+print("="*50)
+
+print("Create an age classifier that:")
+print("1. Takes person's age")
+print("2. Classifies into appropriate group")
+print("3. Provides relevant information for each group")
+
+print("\nAge groups:")
+print("• 0-2: Baby")
+print("• 3-12: Child") 
+print("• 13-19: Teenager")
+print("• 20-64: Adult")
+print("• 65+: Senior")
+def Age_Classifier():
+    age = int(input("What is your age? "))
+
+    if age < 3:
+        group = "Baby"
+    elif age < 13:
+        group = "Child"
+    elif age < 20:
+        group = "teenager"
+    elif age < 65:
+        group = "Adult"
+    else:
+        group = "Senior"
+    print(f"Age is {age} \n Your group is {group}")
+Age_Classifier()
+    
